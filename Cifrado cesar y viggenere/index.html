@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(img/background.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            --def: #96B7C4;
+            --inv: #fff;
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado cesar y viggenere</title>
+    <!-- Impxort Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="">
+    <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+    <script src="js/viggenere.js"></script>    
+    <script src="js/cesar.js"></script>
+</head>
+<body>
+    <br><br><br><br>
+    <div class=" row">  
+        <div class="col s12  l1"></div>
+        <div class="col s12  l4">
+            <h1 class="orange-text darken-4">CIFRADO CESAR</h1>
+            <br>
+            <label for="text" class="orange-text darken-4">Texto</label>
+            <input type="text" name="text" id="texto" class="white-text">
+            <br>
+            <label for="desp" class="orange-text darken-4">desplazamiento</label>
+            <input type="number" name="desp" id="desplazamiento" class="white-text">          
+            <br>
+            <h1 id="resultado" class="red-text darken-1"></h1>  
+            <button class="btn waves-effect waves-light red darken-1" type="submit" onclick="cifrar();">CIFRAR
+                <i class="material-icons right">send</i>
+            </button>
+            <br>
+            <br>
+            <button class="btn waves-effect waves-light red darken-1" type="submit" onclick="descifrar();">DESIFRAR
+                <i class="material-icons right">send</i>
+            </button>
+            <!-- -->
+        </div>
+        <div class="col s12 m6 l1"></div>
+        <div class="col s12 m6 l4">
+            <h1 class="orange-text darken-4">CIFRADO VIGGENERE</h1>
+            <br>
+            <label for="txt" class="orange-text darken-4">texto</label>
+            <input type="text" name="txt" id="mess" class="white-text">
+            <br>
+            <label for="llave" class="orange-text darken-4">llave</label>
+            <input type="text" name="llave" id="llave" class="white-text">          
+            <br>
+            <h1 id="res" class="red-text darken-1"></h1>
+            <button class="btn waves-effect waves-light red darken-1" type="submit" id="ci">CIFRAR
+                <i class="material-icons right">send</i>
+            </button>
+            <br>
+            <br>
+            <button class="btn waves-effect waves-light red darken-1" type="submit" id="de">DESIFRAR
+                <i class="material-icons right">send</i>
+            </button>
+            <h1 id="res"></h1>
+        </div>  
+        <div class="col s12 m6 l2"></div>    
+        
+
+    </div>    
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+</body>
+</html>

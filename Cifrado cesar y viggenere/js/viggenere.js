@@ -1,18 +1,19 @@
 //vamos a definir nuestro abc
-
 const abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 //aqui va a estar la llave
-
 let llave = "";
 
 $(document).ready(function(){
+    //cifrar
     $('#ci').click(function(){
+    // function cifrar(){
         //vamos a cifrar utilizando una funcion y = (x+z)mod27
 
         //vamos a traer los datos de los campos de texto
         key = document.getElementById('llave').value;
         //validemos la llave
+        // que no tenga espacios ni caracteres nujl;os
         key = key.replace(/ /g, '');
 
         //obtenemos el mensaje
@@ -50,7 +51,7 @@ $(document).ready(function(){
                 newMess += abc[newVal];
             }
             //imprimir resultado
-            document.getElementById('res').value = newMess;
+            document.getElementById('res').innerHTML = newMess;
         }else{
             //aqui si no se cumplen las condiciones
             alert("Chillo T_T");
@@ -99,13 +100,12 @@ $(document).ready(function(){
                 newMess += abc[newVal];
             }
             //imprimir resultado
-            document.getElementById('res').value = newMess;
+            document.getElementById('res').innerHTML = newMess;            
         }else{
             //aqui si no se cumplen las condiciones
             alert("Chillo T_T");
         }
     });
-
 });
 
 
@@ -162,8 +162,6 @@ function sd(){
     });
     alert("El texto ingreso no ha sido aceptado, ingrese solo minuscular y evite numeros y simbolos");
 }
-
-
 function sdd(){
     Swal.fire({
         title : "Error",
@@ -172,7 +170,6 @@ function sdd(){
     });
     alert("La clave ingresa no es correcta no cumple con las normas");
 }
-
 function sz(){
     Swal.fire({
         title : "Error",
