@@ -101,7 +101,7 @@ function Decifrar(textoo){
 
 // LEER EL ARCHIVO A CIFRAR
 async function cargarArchivoDecifrar(file){
-
+    
     var texto = await file.text();
     document.getElementById('visor2').textContent = texto;
     console.log("texto de cargarArchivoDecifrar: "+texto);
@@ -144,13 +144,14 @@ const archivo2 = () =>{
             //lector
             var ver = new FileReader();
             ver.onload = function(e){
-                texx=(cargarArchivoDecifrar(archivoElegido.files[0]));
+                var texx=(cargarArchivoDecifrar(archivoElegido.files[0]));
                 //document.getElementById("visor").innerHTML = '<embed src="'+e.target.result+'" width="500" height="100">';        
+                Decifrar(texx);
             }
             ver.readAsDataURL(archivoElegido.files[0]);
         }
        
     }
-    Decifrar(texx);
+    
 
 }
