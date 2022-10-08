@@ -1,0 +1,87 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(img/background.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            --def: #96B7C4;
+            --inv: #fff;
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DES</title>
+    <!-- Impxort Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+</head>
+<body>
+    <br><br>
+    <div class="row section">
+        <div class="col s12 m6 l4"></div>
+        <div class="col s12 m6 l4">
+            <form method=GET enctype=multipart/form-data action="cifrar.jsp" class="formulario">
+                <p class="white-text">Archivo para decifrar o decifrar con el metodo DES</p>
+                <input type="file" name="file" id="file" class="white-text" onchange="return archivo()">
+                <br><br>               
+                <!---->
+                <label for="clave">CLAVE:</label>
+                <input type="text" name="clave" id="clave" class="white-text"> 
+                <!--<input class="btn waves-effect waves-light white-text" type="submit" name="enviar" id="enviar" value="enviar">-->
+                <button class="btn waves-effect waves-light red darken-1" name="cifrar" id="cifrar" type="submit">
+                    Cifrar<i class="material-icons right">send</i>
+                </button>
+            </form>
+            <br>            
+            <p id="visor"></p>
+
+        </div>
+        <div class="col s12 m6 l4"></div>
+    </div>      
+      
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+     <!---->
+     <script type="text/javascript">
+    function archivo(){
+//        alert("1");
+        var archivoInput = document.getElementById("file");
+        var valor = archivoInput.value;//ruta del archivo
+        var clave = document.getElementById("clave");
+        //var expReg = /(.txt)$/i;
+        if(archivoInput.files && archivoInput.files[0]){
+//            alert("if");
+            var ver = new FileReader();
+            ver.onload = function(e){
+//                alert("function");
+                document.getElementById("visor").innerHTML = '<embed src="'+e.target.result+'" width="500" height="100">';                      
+            };
+//            alert("alert");
+            ver.readAsDataURL(archivoInput.files[0]);
+            console.log("1"+archivoInput);
+            console.log("2"+valor);
+            console.log("3"+ver);
+            console.log("4"+clave);
+           
+        }
+    }
+ </script>
+</body>
+
+</html>
+<!---->

@@ -1,0 +1,104 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(img/background.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            --def: #96B7C4;
+            --inv: #fff;
+        }
+        p {
+            height: 300;
+            border: 1px solid rgb(0, 0, 0);
+            text-emphasis-color: rgb(255, 255, 255);
+           }
+        p.manual {
+            -webkit-hyphens: manual;
+            -ms-hyphens: manual;
+            hyphens: manual;
+            text-emphasis-color: rgb(245, 245, 245);
+          }
+          p.auto {
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+          }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DES</title>
+    <!-- Impxort Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- CRYPTO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="JS/DES.js"></script>    
+</head>
+<body>
+    <br><br>
+    <div class="row section">
+        <h4 class="white-text" style="text-align:center">Archivo para decifrar o decifrar con el metodo DES</h4>
+        <br><br>
+                
+        <div class="col s12 m12 l2"></div>
+        <div class="col s12 m12 l4">
+            <h4 class="white-text" style="text-align:center">CIFRAR</h4><br>
+        
+            <input type="file" name="file" id="file" class="white-text">
+            <br><br>
+            <!---->
+            <label for="clave">CLAVE:</label>
+            <input type="text" name="clave" id="clave" class="white-text"> 
+            <!--<input class="btn waves-effect waves-light white-text" type="submit" name="enviar" id="enviar" value="enviar">-->
+            <button class="btn waves-effect waves-light red darken-1" name="btncifrar" id="btncifrar" type="submit" onclick = 'archivo()'>
+                Cifrar<i class="material-icons right">send</i>
+            </button>
+            
+            <br>
+        </div>
+        <div class="col s12 m12 l4">
+            <h4 class="white-text" style="text-align:center">DECIFRAR</h4><br>
+            <input type="file" name="file2" id="file2" class="white-text">
+            <br><br>
+            <!---->
+            <label for="clave2">CLAVE:</label>
+            <input type="text" name="clave2" id="clave2" class="white-text"> 
+            <!--<input class="btn waves-effect waves-light white-text" type="submit" name="enviar" id="enviar" value="enviar">-->
+            <!-- <button class="btn waves-effect waves-light red darken-1" name="btndecifrar" id="btndecifrar" type="submit" onclick = 'Decifrar()'>
+                Decifrar<i class="material-icons right">send</i>
+            </button><br> -->
+            <input type = 'button' value = 'DECIFRAR' onclick ='archivo2()'>
+        </div>
+        <div class="col s12 m12 l2"></div>        
+    </div>      
+    <div id="visor" class="white"> 
+        <ul>
+            <li><p lang="en" class="auto"></p></li>
+        </ul>
+    </div>
+    <div id="visor2" class="white">ESTO ESTA EN EL DIV</div>
+    <p id="obtenerArchivo" class="white-text">ESTO EN AL P</p>
+      
+
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+     <!---->
+</body>
+
+</html>
+<!---->
