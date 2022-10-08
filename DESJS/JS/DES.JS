@@ -85,7 +85,6 @@ function Decifrar(textoo){
         var desencriptado = CryptoJS.DES.decrypt(textooo,CryptoJS.enc.Utf8.parse(llave), {            
             mode : CryptoJS.mode.ECB , padding: CryptoJS.pad.Pkcs7        
         }).toString(CryptoJS.enc.Utf8);
-          alert("adentro del esle")
         document.getElementById('visor2').innerHTML ="texto: "+mensajeEncriptado;
         //"<h1>" +desencriptado+ "</h1>";
         // '<label>EL MENSAJE DECENCRIPTADO ES EL SIGUIENTE : </label>'+
@@ -118,7 +117,7 @@ const archivo2 = () =>{
     var extencion = /(.txt)$/i;
 
     if(!extencion.exec(contenidoArchivoElegido)){
-        alert('SOLAMENTE INGRESA ARCHIVOS DE TIPO TXT');
+        alert('Ingrese un archivo de tipo txt');
         archivoElegido.value = '';
         return false;
     }
