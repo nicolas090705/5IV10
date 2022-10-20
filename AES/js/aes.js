@@ -17,7 +17,7 @@ async function loadFile(mensaje) {
     console.log(text);
     console.log(password);
     let cifrado = CryptoJS.AES.encrypt(text,password);    
-    document.getElementById('txtci').innerHTML="Texto Cifrado: "+cifrado;
+    document.getElementById('txtci').innerHTML=cifrado;
 }
 
 async function loadFile2(mensaje) {
