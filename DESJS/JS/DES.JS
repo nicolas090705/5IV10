@@ -26,6 +26,7 @@ const archivo = () =>{
     //archivoElegido
     var archivoInput = document.getElementById('file');
     var clave = document.getElementById('clave');
+    console.log(archivoInput+" f "+clave)
     
     //contenidoArchivoElegido
     var valor = archivoInput.value;
@@ -44,8 +45,7 @@ const archivo = () =>{
             ver.onload = function(e){
                 leerArchivo(archivoInput.files[0]);
                 //document.getElementById("visor").innerHTML = '<embed src="'+e.target.result+'" width="500" height="100">';
-                viss = e.target.result;
-                console.log(viss);
+                
             }
             ver.readAsDataURL(archivoInput.files[0]);
         }

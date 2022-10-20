@@ -13,12 +13,12 @@ and open the template in the editor.
             background: url(img/background.jpg) no-repeat center;
             background-size: cover;
             height: 100vh;
-            --def: #96B7C4;
-            --inv: #fff;
+            --def: #6fbede;
+            --inv: rgb(95, 220, 222);
         }
         p {
             height: 300;
-            border: 1px solid rgb(0, 0, 0);
+            border: 1px solid rgb(141, 138, 138);
             text-emphasis-color: rgb(255, 255, 255);
            }
         p.manual {
@@ -44,7 +44,7 @@ and open the template in the editor.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    <script src="JS/DES.js"></script>
+    <script src="JS/script.js"></script>
     <!-- CRYPTO -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
         
@@ -58,39 +58,52 @@ and open the template in the editor.
         <div class="col s12 m12 l2"></div>
         <div class="col s12 m12 l4">
             <h4 class="white-text" style="text-align:center">CIFRAR</h4><br>
+            <p class="white-text">Favor de escribir primero la clave</p>
         
-            <input type="file" name="file" id="file" class="white-text">
+            <input type="file" name="file" id="file" onchange="loadFile(this.files[0])" class="white-text">
             <br><br>
             <!---->
             <label for="clave">CLAVE:</label>
             <input type="text" name="clave" id="clave" class="white-text"> 
             <!--<input class="btn waves-effect waves-light white-text" type="submit" name="enviar" id="enviar" value="enviar">-->
-            <button class="btn waves-effect waves-light red darken-1" name="btncifrar" id="btncifrar" type="submit" onclick = 'archivo()'>
+            <!-- <button class="btn waves-effect waves-light red darken-1" name="btncifrar" id="btncifrar" type="submit" onclick = 'archivo()'>
                 Cifrar<i class="material-icons right">send</i>
+            </button> -->
+            <button type="submit" class="btn btn-primary" onclick="download();">
+                Descargar <i class="material-icons right">send</i>
             </button>
+                <!--<input type="button" id="Descargar" value="Descargar archivo" onclick="download();" />-->
+                <p id="txt" class="white-text" >texto: </p>
+                <p id="txtci"class="white-text">Texto Cifrado: </p>
+                <br><br>                              
             
             <br>
         </div>
         <div class="col s12 m12 l4">
             <h4 class="white-text" style="text-align:center">DECIFRAR</h4><br>
-            <input type="file" name="file2" id="file2" class="white-text">
+            <p class="white-text">Favor de escribir primero la clave</p>
+        
+            <input type="file" name="file2" id="file2" class="white-text" onchange="loadFile2(this.files[0])">
             <br><br>
             <!---->
             <label for="clave2">CLAVE:</label>
             <input type="text" name="clave2" id="clave2" class="white-text">
-            <button class="btn waves-effect waves-light red darken-1" name="btndecifrar" id="btndecifrar" type="submit" onclick ='archivo2()'>
-                Decifrar<i class="material-icons right">send</i>
+            <button class="btn waves-effect waves-light red darken-1" name="btndecifrar" id="btndecifrar" type="submit" onclick="download2();">
+                Descargar2<i class="material-icons right">send</i>
             </button><br>
+            <p id="txtcif" class="white-text">texto:</p>
+            <p id="txtdec" class="white-text"> Texto Decifrado: </p>
+            <br><br>
          </div>
         <div class="col s12 m12 l2"></div>        
     </div>      
-    <div id="visor" class="white"> 
+    <!--<div id="visor" class="white"> 
         <ul>
             <li><p lang="en" class="auto"></p></li>
         </ul>
-    </div>
-    <div id="visor2" class="white">ESTO ESTA EN EL DIV</div>
-    <p id="obtenerArchivo" class="white-text">ESTO EN AL P</p>
+    </div>-->
+    <!--<div id="visor2" class="white">ESTO ESTA EN EL DIV</div>-->
+    <!--<p id="obtenerArchivo" class="white-text">ESTO EN AL P</p>-->
       
 
 

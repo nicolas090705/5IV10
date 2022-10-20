@@ -1,0 +1,2 @@
+este va a hacer el documento para cifrar con el algoritmo DES en js y 
+voy a probar porque on me sirve el de decifrar
